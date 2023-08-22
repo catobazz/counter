@@ -1,38 +1,115 @@
-.App {
-  text-align: center;
+/*.counter {*/
+/*  width: 100%;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  flex-direction: column;*/
+/*  text-align: center;*/
+/*  row-gap: 20px;*/
+/*}*/
+
+.counter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.counter_set {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    border: 2px solid rebeccapurple; /* Толщина, стиль и цвет рамки */
+    border-radius: 5px;
+    padding: 10px; /* Внутренний отступ вокруг содержимого div */
+    width: 180px; /* Ширина div */
+    margin: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.counter_input {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid rebeccapurple; /* Толщина, стиль и цвет рамки */
+    border-radius: 5px;
+    padding: 10px; /* Внутренний отступ вокруг содержимого div */
+    width: 180px; /* Ширина div */
+    margin: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.counter_output {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(116, 7, 7);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid rebeccapurple; /* Толщина, стиль и цвет рамки */
+    border-radius: 5px;
+    padding: 10px; /* Внутренний отступ вокруг содержимого div */
+    width: 180px; /* Ширина div */
+    margin: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.left_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 2px solid rebeccapurple; /* Толщина, стиль и цвет рамки */
+    border-radius: 5px;
+    padding: 15px; /* Внутренний отступ вокруг содержимого div */
+    width: 200px; /* Ширина div */
+    margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: 2px solid rebeccapurple; /* Толщина, стиль и цвет рамки */
+    border-radius: 5px;
+    padding: 8px 10px; /* Внутренний отступ вокруг содержимого div */
+    width: 200px; /* Ширина div */
+    margin: 10px;
 }
+
+/*.control__btn {*/
+/*  font-size: 20px;*/
+/*  padding: 10px 20px;*/
+/*  background-color: transparent;*/
+/*  color: rgb(16, 0, 54);*/
+/*  border: 1px solid rgb(16, 0, 54);*/
+/*  cursor: pointer;*/
+/*  transition: 0.2s ease-in-out;*/
+/*}*/
+
+/*.control__btn:hover {*/
+/*  background-color: rgb(16, 0, 54);*/
+/*  color: rgb(255, 255, 255);*/
+/*  border: 1px solid rgb(16, 0, 54);*/
+/*}*/
+
+/*.reset {*/
+/*  width: 100px;*/
+/*  font-size: 18px;*/
+/*  padding: 10px 20px;*/
+/*  background-color: transparent;*/
+/*  color: rgb(16, 0, 54);*/
+/*  border: 1px solid rgb(16, 0, 54);*/
+/*  cursor: pointer;*/
+/*  transition: 0.2s ease-in-out;*/
+/*}*/
+
+/*.reset:hover {*/
+/*  background-color: rgb(16, 0, 54);*/
+/*  color: rgb(255, 255, 255);*/
+/*  border: 1px solid rgb(16, 0, 54);*/
+/*}*/
