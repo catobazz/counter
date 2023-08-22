@@ -1,4 +1,10 @@
 
+._input-small {
+    width: 80px; /* Ширина поля */
+    height: 15px; /* Высота поля */
+    margin: 5px;
+}
+
 .counter {
     display: flex;
     flex-direction: row;
@@ -16,7 +22,7 @@
     border-radius: 5px;
     padding: 10px; /* Внутренний отступ вокруг содержимого div */
     width: 180px; /* Ширина div */
-    margin: 10px;
+    margin: 5px;
 }
 
 .counter_input {
@@ -27,7 +33,7 @@
     border-radius: 5px;
     padding: 10px; /* Внутренний отступ вокруг содержимого div */
     width: 180px; /* Ширина div */
-    margin: 10px;
+    margin: 5px;
 }
 
 .counter_output {
@@ -52,7 +58,7 @@
     align-items: center;
     border: 2px solid rebeccapurple; /* Толщина, стиль и цвет рамки */
     border-radius: 5px;
-    padding: 15px; /* Внутренний отступ вокруг содержимого div */
+    padding: 10px; /* Внутренний отступ вокруг содержимого div */
     width: 200px; /* Ширина div */
     margin: 10px;
 }

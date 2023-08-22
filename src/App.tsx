@@ -34,15 +34,23 @@ function App() {
             <div className='counter'>
                 <div className="left_container">
                     <div className='counter_input'>
-                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputMaxValue} onChange={handlerMaxInputChange} />
-                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputMinValue} onChange={handlerMinInputChange} />
+                        <div>
+                            <label htmlFor="max">max value: </label>
+                            <input id="max" className='_input-small' type="number" style={{textAlign: "center"}}
+                                   onChange={handlerMaxInputChange}/>
+                        </div>
+                        <div>
+                            <label htmlFor="min">start value: </label>
+                            <input id="min" className='_input-small' type="number" style={{textAlign: "center"}}
+                                   onChange={handlerMinInputChange}/>
+                        </div>
                     </div>
                     <div className='counter_set'>
                         <button onClick={SetValue}>Set</button>
                     </div>
                 </div>
                 <div className="right_container">
-                    <div >
+                    <div>
                         <span className="counter_output">{counter}</span>
                     </div>
                     <div className='counter_set'>
