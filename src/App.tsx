@@ -4,13 +4,17 @@ import './App.css';
 function App() {
 
     const [counter, setCounter] = useState(0);
-
-    const [inputValue, setInputValue] = useState<number>(0)
+    const [inputMaxValue, setInputMaxValue] = useState<number>(0)
+    const [inputMinValue, setInputMinValue] = useState<number>(0)
 
     // Обработчик изменения значения ввода
-    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setInputValue(Number(event.target.value)); // Обновляем состояние inputValue с значением из поля ввода
-    };
+    const handlerMaxInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setInputMaxValue(Number(event.target.value)) // Обновляем состояние inputValue с значением из поля ввода
+    }
+
+    const handlerMinInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setInputMinValue(Number(event.target.value)) // Обновляем состояние inputValue с значением из поля ввода
+    }
 
     //increase counter
     const increase = () => {
@@ -21,16 +25,20 @@ function App() {
     const reset = () => {
         setCounter(0)
     }
+    const SetValue = () => {
+
+    }
+
     return (
         <div className="App">
             <div className='counter'>
                 <div className="left_container">
                     <div className='counter_input'>
-                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputValue} onChange={handleInputChange}/>
-                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputValue} onChange={handleInputChange}/>
+                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputMaxValue} onChange={handlerMaxInputChange} />
+                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputMinValue} onChange={handlerMinInputChange} />
                     </div>
                     <div className='counter_set'>
-                        <button onClick={reset}>Set</button>
+                        <button onClick={SetValue}>Set</button>
                     </div>
                 </div>
                 <div className="right_container">

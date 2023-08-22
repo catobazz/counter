@@ -70,7 +70,8 @@
     margin: 10px;
 }
 
-/*.control__btn {*/
+.control__btn {
+    margin-right: 20px;
 /*  font-size: 20px;*/
 /*  padding: 10px 20px;*/
 /*  background-color: transparent;*/
@@ -78,7 +79,7 @@
 /*  border: 1px solid rgb(16, 0, 54);*/
 /*  cursor: pointer;*/
 /*  transition: 0.2s ease-in-out;*/
-/*}*/
+}
 
 /*.control__btn:hover {*/
 /*  background-color: rgb(16, 0, 54);*/
@@ -86,7 +87,8 @@
 /*  border: 1px solid rgb(16, 0, 54);*/
 /*}*/
 
-/*.reset {*/
+.reset {
+    margin-left: 20px;
 /*  width: 100px;*/
 /*  font-size: 18px;*/
 /*  padding: 10px 20px;*/
@@ -95,7 +97,7 @@
 /*  border: 1px solid rgb(16, 0, 54);*/
 /*  cursor: pointer;*/
 /*  transition: 0.2s ease-in-out;*/
-/*}*/
+}
 
 /*.reset:hover {*/
 /*  background-color: rgb(16, 0, 54);*/
