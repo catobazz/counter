@@ -26,8 +26,8 @@ function App() {
             <div className='counter'>
                 <div className="left_container">
                     <div className='counter_input'>
-                        <input className='_input' type="number" value={inputValue} onChange={handleInputChange}/>
-                        <input className='_input' type="number" value={inputValue} onChange={handleInputChange}/>
+                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputValue} onChange={handleInputChange}/>
+                        <input className='_input' type="number" style={{textAlign: "center"}} value={inputValue} onChange={handleInputChange}/>
                     </div>
                     <div className='counter_set'>
                         <button onClick={reset}>Set</button>
