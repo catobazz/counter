@@ -3,6 +3,7 @@
     width: 80px; /* Ширина поля */
     height: 15px; /* Высота поля */
     margin: 5px;
+    text-align: center;
 }
 
 .counter {

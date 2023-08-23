@@ -5,7 +5,8 @@ function App() {
 
     const [counter, setCounter] = useState(0);
     const [inputMaxValue, setInputMaxValue] = useState<number>(0)
-    const [inputMinValue, setInputMinValue] = useState<number>(0)
+    const [inputStartValue, setInputStartValue] = useState<number>(0)
+
 
     // Обработчик изменения значения ввода
     const handlerMaxInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -13,7 +14,7 @@ function App() {
     }
 
     const handlerMinInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setInputMinValue(Number(event.target.value)) // Обновляем состояние inputValue с значением из поля ввода
+        setInputStartValue(Number(event.target.value)) // Обновляем состояние inputValue с значением из поля ввода
     }
 
     //increase counter
@@ -26,7 +27,7 @@ function App() {
         setCounter(0)
     }
     const SetValue = () => {
-
+        setCounter(inputStartValue)
     }
 
     return (
@@ -36,13 +37,11 @@ function App() {
                     <div className='counter_input'>
                         <div>
                             <label htmlFor="max">max value: </label>
-                            <input id="max" className='_input-small' type="number" style={{textAlign: "center"}}
-                                   onChange={handlerMaxInputChange}/>
+                            <input id="max" className='_input-small' type="number" value={inputMaxValue} onChange={handlerMaxInputChange}/>
                         </div>
                         <div>
                             <label htmlFor="min">start value: </label>
-                            <input id="min" className='_input-small' type="number" style={{textAlign: "center"}}
-                                   onChange={handlerMinInputChange}/>
+                            <input id="min" className='_input-small' type="number" value={inputStartValue} onChange={handlerMinInputChange}/>
                         </div>
                     </div>
                     <div className='counter_set'>
