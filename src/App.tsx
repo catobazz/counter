@@ -1,29 +1,35 @@
-import React, { ChangeEvent, useState, useEffect } from 'react';
+import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
     const [counter, setCounter] = useState(0);
     const [inputMaxValue, setInputMaxValue] = useState<number>(5);
-    const [inputStartValue, setInputStartValue] = useState<number>(0);
-    const [maxInputError, setMaxInputError] = useState<boolean>(false);
+    const [inputStepValue, setInputStepValue] = useState<number>(1);
+
+    const [maxValue, setMaxValue] = useState<number>(5);
+    const [stepValue, setStepValue] = useState<number>(1);
+
+    const [inputError, setInputError] = useState<boolean>(false);
 
     const handlerMaxInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInputMaxValue(Number(event.target.value));
     };
 
-    const handlerMinInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setInputStartValue(Number(event.target.value));
+    const handlerStepInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setInputStepValue(Number(event.target.value));
     };
 
-    const SetValue = () => {
-        if (!maxInputError) {
-            setCounter(inputStartValue);
+    const handleSet = () => {
+        if (!inputError) {
+            setMaxValue(inputMaxValue);
+            setStepValue(inputStepValue);
+            setCounter(0); // сбросить счётчик
         }
     };
 
     const increase = () => {
-        if (counter + inputStartValue <= inputMaxValue) {
-            setCounter(count => count + inputStartValue);
+        if (counter + stepValue <= maxValue) {
+            setCounter(prev => prev + stepValue);
         }
     };
 
@@ -32,8 +38,8 @@ function App() {
     };
 
     useEffect(() => {
-        setMaxInputError(inputStartValue >= inputMaxValue);
-    }, [inputMaxValue, inputStartValue]);
+        setInputError(inputStepValue <= 0 || inputMaxValue <= 0);
+    }, [inputMaxValue, inputStepValue]);
 
     return (
         <div className="App">
@@ -44,28 +50,28 @@ function App() {
                             <label htmlFor="max">max value: </label>
                             <input
                                 id="max"
-                                className={`_input-small ${maxInputError ? 'error' : ''}`}
+                                className={`_input-small ${inputError ? 'error' : ''}`}
                                 type="number"
                                 value={inputMaxValue}
                                 onChange={handlerMaxInputChange}
                             />
                         </div>
                         <div>
-                            <label htmlFor="min">start value: </label>
+                            <label htmlFor="step">step value: </label>
                             <input
-                                id="min"
-                                className={`_input-small ${maxInputError ? 'error' : ''}`}
+                                id="step"
+                                className={`_input-small ${inputError ? 'error' : ''}`}
                                 type="number"
-                                value={inputStartValue}
-                                onChange={handlerMinInputChange}
+                                value={inputStepValue}
+                                onChange={handlerStepInputChange}
                             />
                         </div>
                     </div>
-                    {maxInputError && (
-                        <div className="error-message">Start value must be less than max value</div>
-                    )}
+                    <div className="error-placeholder">
+                        {inputError && <div className="error-message">Max and Step must be &gt; 0</div>}
+                    </div>
                     <div className="counter_set">
-                        <button onClick={SetValue} disabled={maxInputError}>Set</button>
+                        <button onClick={handleSet} disabled={inputError}>Set</button>
                     </div>
                 </div>
                 <div className="right_container">
@@ -76,7 +82,7 @@ function App() {
                         <button
                             className="control__btn"
                             onClick={increase}
-                            disabled={counter + inputStartValue > inputMaxValue || maxInputError}
+                            disabled={counter + stepValue > maxValue || inputError}
                         >
                             inc
                         </button>
